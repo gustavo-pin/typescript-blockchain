@@ -30,7 +30,7 @@ class Blockchain {
     }
 
     private async genesisBLock() {
-        const genesisBlock: Block = new Block(0, ["tx1"], "");
+        const genesisBlock: Block = new Block(0, ["tx1"], "", 1);
         return await db.chain.create({
             data: {
                 index: genesisBlock.index, 
@@ -45,13 +45,13 @@ class Blockchain {
         })
     }
 
-    public async addBlock(txs: string[]) {
-
+    public async addBlock(txs: string[], difficulty: number = 3) {
+        console.time("start-addblock-func");
         await this.loadChain();
         
         var chainLen = this.chain.length;
         
-        const block = new Block(chainLen, txs, this.chain[chainLen - 1].hash);
+        const block = new Block(chainLen, txs, this.chain[chainLen - 1].hash, difficulty);
         
         return await db.chain.create({
             data: {

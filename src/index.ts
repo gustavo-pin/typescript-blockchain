@@ -11,8 +11,15 @@ switch(command) {
             console.error(new Error("The field transactions must contain at least one transaction.")); 
             break;
         }
-        let txs: string = process.argv[3];
-        blockchain.addBlock(txs.split(","));
+        if(parseInt(process.argv[4]) > 4) {
+            console.error("Difficulty too high, the limit is 4");
+            break; 
+        }
+        if(process.argv[4] != undefined) {
+            blockchain.addBlock(process.argv[3].split(","), parseInt(process.argv[4]));
+            break;
+        }
+        blockchain.addBlock(process.argv[3].split(","));
         break;
     case "show":
         blockchain.showChain();

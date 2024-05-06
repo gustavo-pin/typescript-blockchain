@@ -12,12 +12,12 @@ class Block {
     public nonce: number;
     private header: string[];
 
-    constructor(index: number, data: string[], previousHash: string) {
+    constructor(index: number, data: string[], previousHash: string, difficulty: number) {
         this.index = index;
         this.timestamp = BigInt(new Date().getTime());
         this.data = data;
         this.previousHash = previousHash;
-        this.difficult = 4;
+        this.difficulty = difficulty;
         
         this.merkle = this.calcMerkleRoot();
         this.header = [this.index.toString(), this.timestamp.toString(), this.merkle, this.previousHash];
