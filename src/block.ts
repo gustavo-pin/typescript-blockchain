@@ -8,7 +8,7 @@ class Block {
     public merkle: string;
     public previousHash: string;
     public hash: string;
-    public difficult: number;
+    public difficulty: number;
     public nonce: number;
     private header: string[];
 
@@ -57,7 +57,7 @@ class Block {
 
         while(true) {
             let hash: string = this.sha(`${this.nonce}${this.header.join("")}`);
-            if(hash.startsWith("0".repeat(this.difficult))) {
+            if(hash.startsWith("0".repeat(this.difficulty))) {
                 return {hash, nonce: this.nonce}
             }
             console.log(this.nonce);

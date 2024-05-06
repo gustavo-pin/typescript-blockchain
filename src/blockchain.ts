@@ -39,7 +39,7 @@ class Blockchain {
                 previousHash: genesisBlock.previousHash, 
                 merkle: genesisBlock.merkle, 
                 hash: genesisBlock.hash,
-                difficult: genesisBlock.difficult,
+                difficult: genesisBlock.difficulty,
                 nonce: genesisBlock.nonce
             }
         })
@@ -61,7 +61,7 @@ class Blockchain {
                 previousHash: block.previousHash, 
                 merkle: block.merkle, 
                 hash: block.hash,
-                difficult: block.difficult,
+                difficult: block.difficulty,
                 nonce: block.nonce
             }
         });
