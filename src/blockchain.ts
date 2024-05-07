@@ -46,7 +46,6 @@ class Blockchain {
     }
 
     public async addBlock(txs: string[], difficulty: number = 3) {
-        console.time("start-addblock-func");
         await this.loadChain();
         
         var chainLen = this.chain.length;
