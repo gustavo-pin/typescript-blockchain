@@ -50,7 +50,7 @@ class Blockchain {
         
         var chainLen = this.chain.length;
         
-        const block = new Block(chainLen, txs, this.chain[chainLen - 1].hash, difficulty);
+        const block: Block = new Block(chainLen, txs, this.chain[chainLen - 1].hash, difficulty);
         
         return await db.chain.create({
             data: {

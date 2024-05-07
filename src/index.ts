@@ -1,9 +1,9 @@
 import { Blockchain } from './blockchain.js';
 import process from 'process';
 
-const blockchain = new Blockchain();
+const blockchain: Blockchain = new Blockchain();
 
-const command = process.argv[2];
+const command: string = process.argv[2];
 
 switch(command) {
     case "add":
