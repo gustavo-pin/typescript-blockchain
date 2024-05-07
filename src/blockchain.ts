@@ -1,4 +1,4 @@
-import Blocks from './interfaces/BlockInterface.js';
+import Blocks from './interfaces/Chain.js';
 import { PrismaClient } from '@prisma/client';
 import { Block } from './block.js';
 
