@@ -1,4 +1,4 @@
-import Blocks from './interfaces/BlockInterface.js';
+import Chain from './interfaces/Chain.js';
 import { PrismaClient } from '@prisma/client';
 import { Block } from './block.js';
 
@@ -6,7 +6,7 @@ const db = new PrismaClient();
 
 
 class Blockchain {
-    public chain: Blocks[] = [];
+    public chain: Chain[] = [];
 
     private async loadChain() {
         const dbChain = await db.chain.findMany();
