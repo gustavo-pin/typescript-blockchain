@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import Chain from './interfaces/Chain.js';
+=======
+import Blocks from './interfaces/Chain.js';
+>>>>>>> 57aff90bc29556b4d2e295eb759cb77bc06d913d
 import { PrismaClient } from '@prisma/client';
 import { Block } from './block.js';
 
