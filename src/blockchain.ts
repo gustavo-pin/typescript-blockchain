@@ -8,6 +8,16 @@ const db = new PrismaClient();
 class Blockchain {
     public chain: Chain[] = [];
 
+    private async verifyChainLen(n: number): Promise<boolean> {
+        await this.loadChain();
+
+        if(n > this.chain.length - 1) {
+            return false;
+        }
+
+        return true;
+    }
+
     private async loadChain() {
         const dbChain = await db.chain.findMany();
         
@@ -74,7 +84,7 @@ class Blockchain {
     public async get(i: number) {
         await this.loadChain();
         const block = this.chain.find(b => b.index == i);
-        if(i > this.chain.length - 1) {
+        if(!await this.verifyChainLen(i)) {
             return console.error(
             new Error(`The chain has not this number of blocks. The latest block index is ${this.chain.length - 1}`))
         }
