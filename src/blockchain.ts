@@ -23,14 +23,14 @@ class Blockchain {
         
         this.chain = dbChain.map(block => {
             return {
-                index: block.index,
-                timestamp: block.timestamp,
-                data: block.data.split(' ? '),
+                index:        block.index,
+                timestamp:    block.timestamp,
+                data:         block.data.split(' ? '),
                 previousHash: block.previousHash,
-                merkle: block.merkle,
-                hash: block.hash,
-                difficult: block.difficult,
-                nonce: block.nonce
+                merkle:       block.merkle,
+                hash:         block.hash,
+                difficult:    block.difficult,
+                nonce:        block.nonce
             }
         });
 
@@ -43,14 +43,14 @@ class Blockchain {
         const genesisBlock: Block = new Block(0, ["tx1"], "", 1);
         return await db.chain.create({
             data: {
-                index: genesisBlock.index, 
-                timestamp: genesisBlock.timestamp, 
-                data: genesisBlock.data.join(" ? "), 
+                index:        genesisBlock.index, 
+                timestamp:    genesisBlock.timestamp, 
+                data:         genesisBlock.data.join(" ? "), 
                 previousHash: genesisBlock.previousHash, 
-                merkle: genesisBlock.merkle, 
-                hash: genesisBlock.hash,
-                difficult: genesisBlock.difficulty,
-                nonce: genesisBlock.nonce
+                merkle:       genesisBlock.merkle, 
+                hash:         genesisBlock.hash,
+                difficult:    genesisBlock.difficulty,
+                nonce:        genesisBlock.nonce
             }
         })
     }

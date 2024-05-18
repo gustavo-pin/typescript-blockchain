@@ -2,15 +2,15 @@ import { createHash } from 'node:crypto';
 import foundNonce from './interfaces/functionNonce.js';
 
 class Block {
-    public index: number;
-    public timestamp: bigint;
-    public data: string[];
-    public merkle: string;
+    public index:        number;
+    public timestamp:    bigint;
+    public data:         string[];
+    public merkle:       string;
     public previousHash: string;
-    public hash: string;
-    public difficulty: number;
-    public nonce: number;
-    private header: string[];
+    public hash:         string;
+    public difficulty:   number;
+    public nonce:        number;
+    private header:      string[];
 
     constructor(index: number, data: string[], previousHash: string, difficulty: number) {
         this.index = index;
