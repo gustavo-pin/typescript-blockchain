@@ -32,7 +32,7 @@ class Block {
     }
 
     private calcMerkleRoot(): string {
-        if (this.data.length === 1) return this.data[0];
+        if (this.data.length === 1) return this.sha(this.data[0]);
 
         const hashes = this.data.map(tx => this.sha(tx));
 
