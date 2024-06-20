@@ -10,12 +10,16 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/eccrypto": "^1.1.6",
     "prisma": "^5.13.0",
     "ts-node-dev": "^2.0.0"
   },
   "dependencies": {
     "@prisma/client": "^5.13.0",
     "@types/sha256": "^0.2.2",
+    "bitcoinjs-lib": "^6.1.6",
+    "bs58": "^5.0.0",
+    "eccrypto": "^1.1.6",
     "sha256": "^0.2.0"
   }
 }
